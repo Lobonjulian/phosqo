@@ -1,0 +1,11 @@
+@import "./fonts.css";
+@import "./reset.css";
+@import "./token.css";
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
