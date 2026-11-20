@@ -28,6 +28,7 @@
   --color-tint-blue: var(--blue-700);
   --color-tint-magenta: var(--magenta-800);
   --color-tint-green: var(--green-800);
+  --color-tint-violet: var(--purple-700);
 
   --space-xs: 0.5rem;
   --space-sm: 1rem;
