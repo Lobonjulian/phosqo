@@ -1,0 +1,31 @@
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  background-color: var(--color-accent-secondary);
+  transform: rotate(-1deg);
+  box-shadow: 1px 2px 20px 4px var(--color-accent-secondary);
+
+  .marquee__track {
+    padding-block: var(--space-xs);
+    width: max-content;
+    display: flex;
+    gap: var(--space-lg);
+    animation: scroll 20s linear infinite;
+    will-change: transform;
+  }
+
+  .marquee__item {
+    white-space: nowrap;
+    flex-shrink: 0;
+    color: var(--color-text-inverse);
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
