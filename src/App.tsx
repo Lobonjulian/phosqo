@@ -1,16 +1,11 @@
-import Button from "@/shared/ui/Button";
 import { products } from "./entities/product/data/products";
+import { HeroShowcase } from "./widgets/hero-showcase/ui/HeroShowcase";
 import { ProductGallery } from "./widgets/product-gallery/ui/ProductGallery";
 
 function App() {
   return (
     <>
-      <div className="app">
-        <Button label="primary" variant="primary" />
-        <Button label="outline" variant="outline" />
-        <Button label="I" variant="icon" />
-      </div>
-
+      <HeroShowcase />
       <ProductGallery products={products} title="Descubre La Colección Brillante" />
     </>
   );

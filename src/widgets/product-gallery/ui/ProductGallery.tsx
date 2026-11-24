@@ -11,7 +11,7 @@ export function ProductGallery({
   title: string;
 }) {
   return (
-    <section className={style.gallery}>
+    <section id="colecciones" className={style.gallery}>
       <SectionHeader title={title} />
       <ul className={style.gallery__grid}>
         {products.map((product) => (
