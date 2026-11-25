@@ -1,0 +1,33 @@
+.header {
+  position: sticky;
+  top: 0;
+  padding-inline: var(--space-xs);
+  background-color: var(--color-surface);
+  z-index: 10;
+  .header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    li {
+      text-transform: uppercase;
+    }
+  }
+
+  .header__action {
+    display: flex;
+    gap: var(--space-xs);
+
+    .header__input {
+      padding-inline: var(--space-xs);
+      background-color: var(--color-border);
+      border: none;
+      border-radius: var(--radius-sm);
+    }
+  }
+}
