@@ -1,5 +1,5 @@
 import { formatCOP } from "@/shared/lib/format";
-import Button from "@/shared/ui/Button";
+import { Button } from "@/shared/ui/Button";
 import type { Product } from "../model/types";
 import style from "./ProductCard.module.css";
 

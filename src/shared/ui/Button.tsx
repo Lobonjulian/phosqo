@@ -1,12 +1,22 @@
 import style from "./Button.module.css";
 
-export interface ButtonProps {
+type BaseProps = {
   label: string;
   variant?: "primary" | "outline" | "icon";
   type?: "button" | "submit" | "reset";
-  href?: string;
-  onClick?: () => void;
-}
+};
+
+type ButtonProps = BaseProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    href?: never;
+  };
+
+type LinkProps = BaseProps &
+  Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
+    href: string;
+  };
+
+type Props = ButtonProps | LinkProps;
 
 const VARIANTS = {
   primary: "btn--primary",
@@ -14,24 +24,20 @@ const VARIANTS = {
   icon: "btn--icon",
 } as const;
 
-export default function Button({
-  label,
-  variant = "primary",
-  type = "button",
-  onClick,
-  href,
-}: ButtonProps) {
+export function Button({ label, variant = "primary", type = "button", ...props }: Props) {
   const clases = `${style.btn} ${style[VARIANTS[variant]]}`;
 
-  if (href) {
+  if (props.href !== undefined) {
+    const { href, ...linkProps } = props;
     return (
-      <a className={clases} href={href}>
+      <a className={clases} href={href} {...linkProps}>
         {label}
       </a>
     );
   }
+
   return (
-    <button className={clases} type={type} onClick={onClick}>
+    <button className={clases} type={type} {...props}>
       {label}
     </button>
   );

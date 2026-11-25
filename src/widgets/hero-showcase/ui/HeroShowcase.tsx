@@ -1,6 +1,6 @@
 import { heroSlides } from "@/entities/hero/data/heroSlide";
 import { useRotation } from "@/features/rotate-hero/model/useRotation";
-import Button from "@/shared/ui/Button";
+import { Button } from "@/shared/ui/Button";
 import styles from "./HeroShowcase.module.css";
 
 export function HeroShowcase() {
