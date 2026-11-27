@@ -16,5 +16,6 @@
 
 .sectionHeaderSubtitle {
   color: var(--color-text-muted);
+  font-size: var(--text-base);
   text-wrap: pretty;
 }
