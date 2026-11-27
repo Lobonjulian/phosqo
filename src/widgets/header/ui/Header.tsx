@@ -1,26 +1,8 @@
 import { Button } from "@/shared/ui/Button";
 import { useEffect, useRef, useState } from "react";
 import style from "./Header.module.css";
-
-const NAV_ITEMS = [
-  { href: "/", label: "Inicio" },
-  {
-    href: "#producto",
-    label: "Productos",
-  },
-  {
-    href: "#colecciones",
-    label: "Colecciones",
-  },
-  {
-    href: "#como",
-    label: "Como funciona",
-  },
-  {
-    href: "#testimonios",
-    label: "Testimonios",
-  },
-] as const;
+import { HeaderMobile } from "./HeaderMobile";
+import { NAV_ITEMS } from "../data/navigation";
 
 export function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -39,6 +21,8 @@ export function Header() {
           </a>
         </div>
 
+        <HeaderMobile />
+
         <nav aria-label="Navegación Principal">
           <ul className={style.header__nav}>
             {NAV_ITEMS.map((item) => (
@@ -48,6 +32,7 @@ export function Header() {
             ))}
           </ul>
         </nav>
+
         <div className={style.header__action}>
           <Button
             label="🔍"
